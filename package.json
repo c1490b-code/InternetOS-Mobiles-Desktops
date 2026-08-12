@@ -1,0 +1,86 @@
+{
+  "name": "internetos",
+  "version": "1.0.0",
+  "description": "InternetOS — The Internet-Native Operating System. Works on Linux, Android, Apple/iOS, and Desktop. Powered by NeuralChip AI Core.",
+  "main": "core/kernel.js",
+  "bin": {
+    "internetos": "./bin/internetos.js",
+    "ios": "./bin/internetos.js"
+  },
+  "scripts": {
+    "start": "node core/kernel.js",
+    "dev": "nodemon core/kernel.js",
+    "build": "node scripts/build.js",
+    "build:linux": "node scripts/build.js --platform linux",
+    "build:android": "node scripts/build.js --platform android",
+    "build:ios": "node scripts/build.js --platform ios",
+    "build:desktop": "node scripts/build.js --platform desktop",
+    "build:all": "node scripts/build.js --all",
+    "test": "jest --config jest.config.js",
+    "lint": "eslint . --ext .js",
+    "console": "node console/terminal.js",
+    "install:global": "npm install -g",
+    "docker:build": "docker build -t internetos .",
+    "docker:run": "docker-compose up",
+    "publish:live": "node scripts/publish-live.js"
+  },
+  "keywords": [
+    "internetos",
+    "os",
+    "internet-native",
+    "neuralchip",
+    "ai",
+    "linux",
+    "android",
+    "ios",
+    "apple",
+    "desktop",
+    "operating-system",
+    "git-native",
+    "distributed",
+    "cloud-os"
+  ],
+  "author": "InternetOS Foundation",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "chalk": "^5.3.0",
+    "commander": "^11.1.0",
+    "dockerode": "^4.0.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "inquirer": "^9.2.0",
+    "node-fetch": "^3.3.2",
+    "openai": "^4.20.0",
+    "simple-git": "^3.20.0",
+    "socket.io": "^4.7.2",
+    "ws": "^8.14.2",
+    "yaml": "^2.3.4",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.50.0",
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.1",
+    "prettier": "^3.0.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/internetos/internetos.git"
+  },
+  "homepage": "https://internetos.dev",
+  "internetOS": {
+    "neuralChip": {
+      "enabled": true,
+      "model": "neuralchip-v2",
+      "autoFork": true,
+      "autoIngest": true
+    },
+    "platforms": ["linux", "android", "ios", "desktop"],
+    "internetNative": true,
+    "version": "1.0.0"
+  }
+}
